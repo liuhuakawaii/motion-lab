@@ -1,0 +1,55 @@
+.strata-demo { background:#e9c5a8; color:#fcf0d8; }
+.strata-journey { position:relative; height:390svh; }
+.strata-stage { position:sticky; top:52px; height:calc(100svh - 52px); overflow:hidden; isolation:isolate; }
+.strata-sky,.strata-dusk,.strata-grain { position:absolute; inset:0; pointer-events:none; }
+.strata-sky { background:linear-gradient(#dbac99 0%,#e9b78f 60%,#f0c9a0); }
+.strata-dusk { background:linear-gradient(#453953,#965b65 60%,#e09c78); opacity:0; z-index:1; }
+.strata-grain { z-index:9; opacity:.09; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); }
+.strata-sun { position:absolute; width:clamp(110px,15vw,230px); aspect-ratio:1; border-radius:50%; background:#f6e7b9; top:14%; left:65%; z-index:2; box-shadow:0 0 70px #f7cf7b40; }
+.strata-layer { position:absolute; width:130%; left:-15%; pointer-events:none; will-change:transform; }
+.strata-far { z-index:3; }
+.strata-middle { z-index:5; }
+.strata-near { z-index:6; }
+.strata-front { z-index:7; }
+.strata-copy { position:absolute; z-index:4; pointer-events:none; }
+.strata-copy>span { font:10px monospace; letter-spacing:2.5px; }
+.strata-copy--intro { top:12%; left:10%; }
+.strata-copy h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(72px,9.7vw,150px); font-weight:400; letter-spacing:-6px; line-height:.95; margin:24px 0 22px; }
+.strata-copy h1 em,.strata-copy h2 em { font-weight:400; }
+.strata-copy p { font-size:12px; letter-spacing:3px; opacity:.8; }
+.strata-copy--arrival { z-index:8; top:21%; left:47%; opacity:0; visibility:hidden; }
+.strata-copy h2 { font:400 clamp(52px,6.5vw,100px)/.95 Georgia,serif; letter-spacing:-4px; margin:20px 0 25px; }
+.strata-coordinate { position:absolute; z-index:10; bottom:45px; left:38px; display:flex; flex-direction:column; gap:10px; font:8px/1.7 monospace; letter-spacing:1.5px; }
+.strata-coordinate>span:first-child { font-size:10px; }
+.strata-scroll { position:absolute; z-index:10; bottom:44px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:16px; font-size:10px; letter-spacing:2px; }
+.strata-scroll i { font:normal 26px Georgia,serif; }
+.strata-progress { position:absolute; bottom:0; left:0; height:3px; width:100%; background:#ffffff20; z-index:11; }
+.strata-progress i { display:block; height:100%; background:#eac9a1; transform:scaleX(0); transform-origin:left; }
+.strata-distance { position:absolute; right:38px; bottom:46px; z-index:10; font:10px monospace; letter-spacing:2px; }
+.strata-outro { background:#412d29; padding:110px 10% 120px; text-align:center; }
+.strata-outro>span { font:9px monospace; letter-spacing:2px; color:#ca9e81; }
+.strata-outro h2 { font-size:clamp(28px,4.6vw,64px); font-weight:400; letter-spacing:-1px; margin:30px 0; }
+.strata-outro h2 em { font-style:normal; color:#c39575; }
+.strata-outro p { font-size:12px; line-height:2; color:#ba9f8c; }
+.strata-outro a { display:inline-flex; align-items:center; gap:50px; margin-top:35px; padding-bottom:12px; border-bottom:1px solid #ba9f8c60; font-size:12px; }
+.strata-outro a span { font-size:25px; }
+@media(max-width:600px) {
+ .strata-journey { height:330svh; }
+ .strata-copy--intro { top:23%; left:8%; }
+ .strata-copy h1 { font-size:23vw; letter-spacing:-4px; }
+ .strata-copy>span { font-size:8px; letter-spacing:1.5px; }
+ .strata-copy p { font-size:10px; letter-spacing:2px; }
+ .strata-sun { width:100px; left:63%; top:12%; }
+ .strata-copy--arrival { top:27%; left:8%; }
+ .strata-copy h2 { font-size:16vw; letter-spacing:-3px; }
+ .strata-coordinate { left:20px; bottom:28px; font-size:7px; }
+ .strata-coordinate>span:first-child { font-size:8px; }
+ .strata-scroll { bottom:100px; width:100%; font-size:9px; }
+ .strata-distance { right:20px; bottom:30px; font-size:8px; }
+ .strata-outro { padding:80px 8%; }
+ .strata-outro>span { font-size:7px; letter-spacing:1px; }
+}
+.strata-demo.is-reduced .strata-journey { height:calc(100svh - 52px); margin-top:52px; }
+.strata-demo.is-reduced .strata-stage { position:relative; top:0; }
+.strata-demo.is-reduced .strata-layer { will-change:auto; }
+.strata-demo.is-reduced :is(.strata-scroll,.strata-distance,.strata-progress) { display:none; }

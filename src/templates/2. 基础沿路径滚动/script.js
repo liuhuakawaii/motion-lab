@@ -1,3 +1,7 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // 确保 DOM 加载完成

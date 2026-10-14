@@ -78,8 +78,8 @@ window.addEventListener("load", () => {
       fragmentShader: displayFragmentShader,
     })
 
-    loadImage('assets/portrait_top.jpg', topTexture, topTextureSize);
-    loadImage('assets/portrait_bottom.jpg', bottomTexture, bottomTextureSize);
+    loadImage(new URL('./assets/portrait_top.jpg', import.meta.url).href, topTexture, topTextureSize);
+    loadImage(new URL('./assets/portrait_bottom.jpg', import.meta.url).href, bottomTexture, bottomTextureSize);
 
     const geometry = new THREE.PlaneGeometry(2, 2);
     const displayMesh = new THREE.Mesh(geometry, displayMaterial);
@@ -192,7 +192,7 @@ window.addEventListener("load", () => {
         event.preventDefault();
 
         const canvasRect = canvas.getBoundingClientRect();
-        const touchX = event.touches[0].clientx;
+        const touchX = event.touches[0].clientX;
         const touchY = event.touches[0].clientY;
         if (
           touchX >= canvasRect.left &&

@@ -1,0 +1,61 @@
+.fold-demo { background:#203b35; color:#f1ead9; }
+.fold-journey { height:370svh; position:relative; }
+.fold-stage { position:sticky; top:52px; height:calc(100svh - 52px); min-height:540px; overflow:hidden; background:radial-gradient(ellipse at 50% 60%,#4b6255 0,#29473e 45%,#203b35 80%); }
+.fold-heading { position:absolute; top:5%; left:5%; right:5%; display:flex; justify-content:space-between; align-items:start; }
+.fold-heading span { font:9px monospace; letter-spacing:2px; color:#b8c2ac; }
+.fold-heading h1 { font:400 clamp(48px,6vw,84px)/.85 Georgia,serif; letter-spacing:-3px; margin:16px 0 0; }
+.fold-heading h1 em { color:#c9d7b3; }
+.fold-heading p { font-size:11px; line-height:2; color:#bcc6ae; letter-spacing:2px; text-align:right; margin-top:5px; }
+.fold-perspective { position:absolute; inset:0; perspective:1800px; perspective-origin:50% 56%; }
+.fold-assembly { position:absolute; left:50%; top:57%; width:var(--fold-width); height:var(--fold-height); transform-style:preserve-3d; will-change:transform; }
+.fold-panel { position:absolute; top:0; left:100%; width:var(--fold-width); height:var(--fold-height); transform-origin:0 50%; transform-style:preserve-3d; }
+.fold-assembly>.fold-panel { left:0; }
+.fold-print { position:absolute; inset:0; overflow:hidden; backface-visibility:visible; background:#eee5cf; color:#273e37; box-shadow:inset 1px 0 0 #ffffff40,inset -1px 0 0 #00000012; }
+.fold-panel--0>.fold-print { background:#3654ad; color:#e7e9c4; }
+.fold-panel--1>.fold-print { background:#e6d7b6; color:#46604b; }
+.fold-panel--2>.fold-print { background:#f0ece0; color:#243a31; }
+.fold-panel--3>.fold-print { background:#d55638; color:#f2d49d; }
+.fold-panel--4>.fold-print { background:#c4d0ba; color:#37514c; }
+.fold-print>svg { position:absolute; inset:0; width:100%; height:100%; }
+.fold-print-top { position:absolute; top:5%; left:8%; z-index:1; font:clamp(5px,.6vw,9px)/1.5 monospace; letter-spacing:1px; }
+.fold-print-bottom { position:absolute; bottom:6%; left:8%; font:400 clamp(14px,2.1vw,31px)/.94 Georgia,serif; letter-spacing:-.4px; }
+.fold-print-small { font:6px monospace; letter-spacing:.5px; }
+.fold-type-art { position:absolute; top:28%; left:7%; font:400 clamp(46px,6.8vw,97px)/.72 Georgia,serif; letter-spacing:-5px; }
+.fold-type-art>span { font-style:italic; font-size:.65em; display:block; text-align:right; padding:5% 18% 0 0; color:#b65036; }
+.fold-type-art>em { font-size:.5em; letter-spacing:-2px; }
+.fold-shade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,#00000055,#000 80%); opacity:0; }
+.fold-ground { position:absolute; top:82%; left:20%; width:60%; height:4%; border-radius:50%; background:#0d2119; filter:blur(16px); opacity:.45; pointer-events:none; }
+.fold-caption { position:absolute; bottom:5%; left:5%; right:5%; display:flex; align-items:center; gap:20px; }
+.fold-chapter { font:9px monospace; letter-spacing:1.5px; color:#c3d1b5; }
+.fold-caption p { margin:0 0 0 auto; font-size:11px; color:#b2bea8; }
+.fold-cue { font-size:22px; }
+.fold-meter { position:absolute; bottom:0; height:2px; width:100%; background:#f0e6c815; }
+.fold-meter span { display:block; background:#d6dea9; height:100%; transform-origin:left; transform:scaleX(0); }
+.fold-outro { padding:90px 10% 100px; text-align:center; background:#192f2a; }
+.fold-outro>p { font:9px monospace; letter-spacing:2px; color:#93a58e; }
+.fold-outro h2 { font-size:clamp(35px,5vw,64px); font-weight:400; line-height:1.3; letter-spacing:-1px; margin:30px 0; }
+.fold-outro h2 em { color:#bccbab; font-style:normal; }
+.fold-outro a { display:inline-flex; gap:70px; align-items:center; font-size:12px; padding-bottom:12px; border-bottom:1px solid #778a7080; }
+.fold-outro a span { font-size:22px; }
+@media(max-width:620px) {
+ .fold-stage { min-height:570px; }
+ .fold-heading { top:5%; left:7%; right:7%; }
+ .fold-heading h1 { font-size:57px; }
+ .fold-heading span { font-size:7px; letter-spacing:1px; }
+ .fold-heading p { font-size:9px; letter-spacing:1px; margin-top:30px; }
+ .fold-assembly { top:58%; }
+ .fold-type-art { font-size:15vw; letter-spacing:-3px; top:30%; }
+ .fold-print-top { font-size:5px; letter-spacing:0; }
+ .fold-print-bottom { font-size:19px; }
+ .fold-print-small { font-size:4px; letter-spacing:0; }
+ .fold-caption { bottom:5%; left:7%; right:7%; flex-wrap:wrap; gap:12px; }
+ .fold-caption p { order:3; width:100%; margin:0; font-size:10px; }
+ .fold-chapter { font-size:8px; }
+ .fold-cue { margin-left:auto; }
+ .fold-ground { top:79%; }
+ .fold-outro>p { font-size:7px; letter-spacing:1px; }
+}
+.fold-demo.is-reduced .fold-journey { height:auto; padding-top:52px; }
+.fold-demo.is-reduced .fold-stage { position:relative; top:0; }
+.fold-demo.is-reduced .fold-assembly { will-change:auto; }
+.fold-demo.is-reduced :is(.fold-cue,.fold-meter) { display:none; }
